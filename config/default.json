@@ -1,4 +1,3 @@
 {
-	"mongoURI": "mongodb+srv://Simona123:Simona123@recruitmentapp-wvncn.mongodb.net/test?retryWrites=true&w=majority",
-	"jwtSecret": "mysecrettoken"
+	"mongoURI": "mongodb+srv://Simona123:Simona123@recruitmentapp-wvncn.mongodb.net/test?retryWrites=true&w=majority"
 }
