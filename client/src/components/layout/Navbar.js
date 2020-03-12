@@ -4,7 +4,7 @@ const Navbar = () => {
 	return (
 		<nav className='navbar bg-dark'>
 			<h1>
-				<a href='dashboard.html'> {...SoftDev}</a>
+				<a href='dashboard.html'> SoftDev</a>
 			</h1>
 			<ul>
 				<li>
