@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from " prop-types";
+import PropTypes from "prop-types";
 //Anytime we want to interact with Redux we need to call/import connect
 import { connect } from "react-redux";
 
