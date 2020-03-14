@@ -1,10 +1,10 @@
-import React, { Fragment, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { Fragment, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Login = () => {
 	const [formData, setFormData] = useState({
-		email: '',
-		password: ''
+		email: "",
+		password: ""
 	});
 
 	const { email, password } = formData;
@@ -14,7 +14,7 @@ const Login = () => {
 	const onSubmit = e => {
 		e.preventDefault();
 
-		console.log('Succes');
+		console.log("Succes");
 	};
 	return (
 		<Fragment>
@@ -40,7 +40,7 @@ const Login = () => {
 						name='password'
 						value={password}
 						onChange={e => onChange(e)}
-						minlength='6'
+						minLength='6'
 					/>
 				</div>
 

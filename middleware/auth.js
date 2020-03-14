@@ -1,18 +1,20 @@
-const jwt = require('jsonwebtoken');
-const config = require('config');
+// User token with npm package
+// https://jwcrypto.readthedocs.io/en/latest/jwt.html
+const jwt = require("jsonwebtoken");
+const config = require("config");
 
 module.exports = function(req, res, next) {
-	const token = req.header('x-auth-token');
+	const userToken = req.header("x-auth-token");
 
-	if (!token) {
-		return res.status(401).json({ msg: 'No token, authorization denied' });
+	if (!userToken) {
+		return res.status(401).json({ msg: "No token, authorization denied" });
 	}
 	try {
-		const decoded = jwt.verify(token, config.get('jwtSecret'));
+		const secretToken = jwt.verify(userToken, config.get("jwtSecret"));
 
-		req.user = decoded.user;
+		req.user = secretToken.user;
 		next();
 	} catch (err) {
-		res.status(401).json({ msg: 'Token is not valid' });
+		res.status(401).json({ msg: "Token is not valid" });
 	}
 };
