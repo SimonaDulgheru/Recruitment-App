@@ -1,15 +1,15 @@
 const express = require("express");
 const router = express.Router();
 const gravatar = require("gravatar"); // https://www.npmjs.com/package/gravatar
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
+const bcrypt = require("bcryptjs"); //https://www.npmjs.com/package/bcrypt
+const jwt = require("jsonwebtoken"); //https://github.com/auth0/node-jsonwebtoken
 const config = require("config");
-const { check, validationResult } = require("express-validator/check");
+const { check, validationResult } = require("express-validator/check"); //https://express-validator.github.io/docs/
 
 const User = require("../../models/User");
 
 // @ route Post api/users
-// @desc Test route
+// @desc Register User
 // @acess Public
 router.post(
 	"/",
@@ -26,11 +26,12 @@ router.post(
 	async (req, res) => {
 		const errors = validationResult(req);
 		if (!errors.isEmpty()) {
+			// If the name, email and password don't match we get an error
 			return res.status(400).json({ errors: errors.array() });
 		}
 
 		const { name, email, password } = req.body;
-
+		//See if user exists, search by email
 		try {
 			let user = await User.findOne({ email });
 			if (user) {
@@ -38,7 +39,7 @@ router.post(
 					errors: [{ msg: "User already exists" }]
 				});
 			}
-
+			//Get user avatar
 			const userAvatar = gravatar.url(email, {
 				s: "200",
 				r: "pg",
@@ -51,6 +52,7 @@ router.post(
 				userAvatar,
 				password
 			});
+			//Encrypt password with bcrypt npm
 			const salt = await bcrypt.genSalt(10);
 
 			user.password = await bcrypt.hash(password, salt);
@@ -62,7 +64,8 @@ router.post(
 					id: user.id
 				}
 			};
-
+			//Return jsonwebtoken
+			//https://jwt.io/
 			jwt.sign(
 				userIdAuth,
 				config.get("jwtSecret"),
