@@ -8,14 +8,21 @@ import Alert from "./components/layout/Alert";
 //Redux
 import { Provider } from "react-redux";
 import store from "./store";
-import { loadUser } from "./actions/auth";
+
+import { authUser } from "./actions/auth";
+
+
 import setAuthToken from "./utils/setAuthToken";
 
+
 import "./App.css";
+import userToken from "./utils/userToken";
 
 if (localStorage.token) {
-	setAuthToken(localStorage.token);
+
+	userToken(localStorage.token);
 }
+//https://reactjs.org/docs/hooks-effect.html  ckeck Note about empty array
 
 const App = () => {
 	useEffect(() => {
@@ -23,6 +30,7 @@ const App = () => {
 		// https://reactjs.org/docs/hooks-effect.html - check Note in docs
 		store.dispatch(loadUser());
 	}, []);
+
 	return (
 		<Provider store={store}>
 			<Router>
