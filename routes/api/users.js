@@ -1,71 +1,74 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const gravatar = require('gravatar');
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const config = require('config');
-const { check, validationResult } = require('express-validator/check');
+const gravatar = require("gravatar"); // https://www.npmjs.com/package/gravatar
+const bcrypt = require("bcryptjs"); //https://www.npmjs.com/package/bcrypt
+const jwt = require("jsonwebtoken"); //https://github.com/auth0/node-jsonwebtoken
+const config = require("config");
+const { check, validationResult } = require("express-validator/check"); //https://express-validator.github.io/docs/
 
-const User = require('../../models/User');
+const User = require("../../models/User");
 
 // @ route Post api/users
-// @desc Test route
+// @desc Register User
 // @acess Public
 router.post(
-	'/',
+	"/",
 	[
-		check('name', 'Name is required')
+		check("name", "Name is required")
 			.not()
 			.isEmpty(),
-		check('email', 'Please include a valid email ').isEmail(),
+		check("email", "Please include a valid email ").isEmail(),
 		check(
-			'password',
-			'Please insert a password with 6 or more characters'
+			"password",
+			"Please insert a password with 6 or more characters"
 		).isLength({ min: 6 })
 	],
 	async (req, res) => {
 		const errors = validationResult(req);
 		if (!errors.isEmpty()) {
+			// If the name, email and password don't match we get an error
 			return res.status(400).json({ errors: errors.array() });
 		}
 
 		const { name, email, password } = req.body;
-
+		//See if user exists, search by email
 		try {
 			let user = await User.findOne({ email });
 			if (user) {
 				return res.status(400).json({
-					errors: [{ msg: 'User already exists' }]
+					errors: [{ msg: "User already exists" }]
 				});
 			}
-
-			const avatar = gravatar.url(email, {
-				s: '200',
-				r: 'pg',
-				d: 'mm'
+			//Get user avatar
+			const userAvatar = gravatar.url(email, {
+				s: "200",
+				r: "pg",
+				d: "mm"
 			});
 
 			user = new User({
 				name,
 				email,
-				avatar,
+				userAvatar,
 				password
 			});
+			//Encrypt password with bcrypt npm
 			const salt = await bcrypt.genSalt(10);
 
 			user.password = await bcrypt.hash(password, salt);
 
 			await user.save();
 
-			const payload = {
+			const userIdAuth = {
 				user: {
 					id: user.id
 				}
 			};
-
+			//Return jsonwebtoken
+			//https://jwt.io/
 			jwt.sign(
-				payload,
-				config.get('jwtSecret'),
+				userIdAuth,
+				config.get("jwtSecret"),
 				{ expiresIn: 360000 },
 				(err, token) => {
 					if (err) throw err;
@@ -73,8 +76,8 @@ router.post(
 				}
 			);
 		} catch (err) {
-			console.error(err.message);
-			res.status(500).send('Server error');
+			console.log(err);
+			res.status(500).send("Server error");
 		}
 	}
 );
