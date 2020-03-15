@@ -5,24 +5,32 @@ import Navbar from "./components/layout/Navbar";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import Alert from "./components/layout/Alert";
-
 //Redux
 import { Provider } from "react-redux";
 import store from "./store";
+
 import { authUser } from "./actions/auth";
+
+
+import setAuthToken from "./utils/setAuthToken";
+
 
 import "./App.css";
 import userToken from "./utils/userToken";
 
 if (localStorage.token) {
+
 	userToken(localStorage.token);
 }
-
 //https://reactjs.org/docs/hooks-effect.html  ckeck Note about empty array
+
 const App = () => {
 	useEffect(() => {
-		store.dispatch(authUser());
-	}, []); // empty array means only runs once
+		// Only runs once when is loaded ([])
+		// https://reactjs.org/docs/hooks-effect.html - check Note in docs
+		store.dispatch(loadUser());
+	}, []);
+
 	return (
 		<Provider store={store}>
 			<Router>
