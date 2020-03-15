@@ -6,12 +6,12 @@ const { check, validationResult } = require("express-validator");
 const request = require("request");
 const config = require("config");
 
-const UserProfile = require("../../models/UserProfile");
+const Profile = require("../../models/UserProfile");
 const User = require("../../models/User");
 
-// @ route GET api/profile
-// @desc Test route
-// @acess Public
+// @ route GET api/userProfile/me
+// @desc Get user Profile
+// @acess Private
 router.get("/me", auth, async (req, res) => {
 	try {
 		const userProfile = await UserProfile.findOne({

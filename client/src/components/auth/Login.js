@@ -14,7 +14,7 @@ const Login = () => {
 	const onSubmit = e => {
 		e.preventDefault();
 
-		console.log("Succes");
+		console.log("Logged In");
 	};
 	return (
 		<Fragment>
