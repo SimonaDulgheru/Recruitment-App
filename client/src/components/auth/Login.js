@@ -1,9 +1,12 @@
 import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
+<<<<<<< HEAD
 //Connect Redux
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { login } from "../../actions/auth";
+=======
+>>>>>>> e2b3ccd905df1308d4042e840635126953366380
 
 const Login = ({ login }) => {
 	const [formData, setFormData] = useState({
@@ -17,8 +20,13 @@ const Login = ({ login }) => {
 
 	const onSubmit = e => {
 		e.preventDefault();
+<<<<<<< HEAD
 		login(email, password);
 		console.log("Succes");
+=======
+
+		console.log("Logged In");
+>>>>>>> e2b3ccd905df1308d4042e840635126953366380
 	};
 	return (
 		<Fragment>
@@ -44,7 +52,7 @@ const Login = ({ login }) => {
 						name='password'
 						value={password}
 						onChange={e => onChange(e)}
-						minlength='6'
+						minLength='6'
 					/>
 				</div>
 

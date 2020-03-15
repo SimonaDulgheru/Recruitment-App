@@ -13,14 +13,14 @@ const initialState = {
 
 export default function(state = initialState, action) {
 
-    const { type, payload } = action;
+    const { type, userIdAuth } = action;
 
     switch (type) {
-        case REGISTER_SUCCESS;
-        localStorage.setItem('token', payload.token);
+        case REGISTER_SUCCESS,
+        localStorage.setItem('token', userIdAuth.token);
         return {
             ...state,
-            ...payload,
+            ...userIdAuth,
             isAuthenticated: true,
             loading: false
         }
