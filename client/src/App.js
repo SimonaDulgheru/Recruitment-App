@@ -11,15 +11,11 @@ import store from "./store";
 
 import { authUser } from "./actions/auth";
 
-
-import setAuthToken from "./utils/setAuthToken";
-
-
-import "./App.css";
 import userToken from "./utils/userToken";
 
-if (localStorage.token) {
+import "./App.css";
 
+if (localStorage.token) {
 	userToken(localStorage.token);
 }
 //https://reactjs.org/docs/hooks-effect.html  ckeck Note about empty array
@@ -28,7 +24,7 @@ const App = () => {
 	useEffect(() => {
 		// Only runs once when is loaded ([])
 		// https://reactjs.org/docs/hooks-effect.html - check Note in docs
-		store.dispatch(loadUser());
+		store.dispatch(authUser());
 	}, []);
 
 	return (
