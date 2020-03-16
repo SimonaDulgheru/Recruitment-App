@@ -23,10 +23,9 @@ const Register = ({ setAlert, register }) => {
 	const onSubmit = async e => {
 		e.preventDefault();
 		if (password !== password2) {
-			setAlert("Passwords do not match", "danger");
+			setAlert("Passwords do not match", "danger"); //App.css
 		} else {
-			register({ name, email, password });
-			// console.log(err);
+			console.log("Registered");
 			// 	const newUser = {
 			// 		name,
 			// 		email,

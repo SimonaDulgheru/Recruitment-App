@@ -10,7 +10,7 @@ import {
 import userToken from "../utils/userToken";
 
 //Authenticate user/load
-export const auth = () => async dispatch => {
+export const authUser = () => async dispatch => {
 	if (localStorage.token) {
 		userToken(localStorage.token);
 	}
@@ -45,11 +45,10 @@ export const register = ({ name, email, password }) => async dispatch => {
 			userIdAuth: res.data
 		});
 	} catch (err) {
-		console.log(err);
 		const errors = err.response.data.errors;
 
 		if (errors) {
-			errors.forEach(error => dispatch(setAlert(error.msg, "danger"))); // CSS
+			errors.forEach(error => dispatch(setAlert(error.msg, "danger")));
 		}
 
 		dispatch({
