@@ -15,7 +15,7 @@ const User = require("../../models/User");
 
 router.get("/", auth, async (req, res) => {
 	try {
-		const user = await (await User.findById(req.user.id)).isSelected(
+		const user = await (await User.findById(req.user.id)).select(
 			"-password"
 		);
 		res.json(user);
