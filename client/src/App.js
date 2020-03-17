@@ -14,6 +14,7 @@ import { loadUser } from "./actions/auth";
 import userToken from "./utils/userToken";
 
 import "./App.css";
+// import Navbar from "./components/layout/Navbar";
 
 if (localStorage.token) {
 	userToken(localStorage.token);
