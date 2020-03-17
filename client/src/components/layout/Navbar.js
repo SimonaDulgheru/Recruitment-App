@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
 	return (
@@ -9,7 +9,7 @@ const Navbar = () => {
 			</h1>
 			<ul>
 				<li>
-					<a href='profiles.html'>Developers</a>
+					<a href='profiles.html'>Members</a>
 				</li>
 				<li>
 					<Link to='/register'>Register</Link>

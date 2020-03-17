@@ -1,15 +1,17 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Landing = () => {
 	return (
-		<section className='landing'>
+		<section className='desktop'>
 			<div className='dark-overlay'>
-				<div className='landing-inner'>
-					<h1 className='x-large'>SoftDev</h1>
+				<div className='desktop-inner'>
+					<h1 className='large'>SoftDev</h1>
 					<p className='lead'>
-						Create a developer profile/portfolio, share posts and
-						get help from other developers
+						The Recruitment and Marketing Platform
+					</p>
+					<p className='lead-about'>
+						The new way to Attract, Manage and Hire top talent
 					</p>
 					<div className='buttons'>
 						<Link to='/register' className='btn btn-primary'>
