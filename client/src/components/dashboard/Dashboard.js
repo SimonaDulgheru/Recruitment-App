@@ -4,15 +4,17 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
 import { getCurrentProfile } from '../../actions/profile';
+// import DashboardActions from'./DashboardActions';
 
 const Dashboard = ({
   getCurrentProfile,
+  // deleteAccount,
   auth: { user },
   profile: { profile, loading }
 }) => {
   useEffect(() => {
     getCurrentProfile();
-  }, []);
+  }, [getCurrentProfile]);
 
   return loading && profile === null ? (
     <Spinner />
@@ -20,7 +22,7 @@ const Dashboard = ({
     <Fragment>
       <h1 className='large text-primary'>Dashboard</h1>
       <p className='lead'>
-        <i className='fas fa-user'> Welcome {user && user.name}</i>
+        <i className='fas fa-user' /> Welcome {user && user.name}
       </p>
       {profile !== null ? (
         <Fragment>Profile</Fragment>

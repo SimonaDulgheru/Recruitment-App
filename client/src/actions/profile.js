@@ -3,7 +3,14 @@ import { setAlert } from './alert';
 
 import {
     GET_PROFILE,
-    PROFILE_ERROR
+    PROFILE_ERROR,
+
+    GET_PROFILES,
+
+    UPDATE_PROFILE,
+    CLEAR_PROFILE,
+    ACCOUNT_DELETED,
+    GET_REPOS
 
 } from './types';
 
@@ -12,7 +19,7 @@ import {
 export const getCurrentProfile = () => async dispatch => {
 
     try {
-        const res = await axios.get('/api/profile/me');
+        const res = await axios.get('/api/profile/simona');
         dispatch({
             type: GET_PROFILE,
             userIdAuth: res.data
