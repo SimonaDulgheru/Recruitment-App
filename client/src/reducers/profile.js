@@ -33,6 +33,12 @@ export default function(state = initialState, action) {
                 error: userIdAuth,
                 loading: false
             };
+        case GET_PROFILES:
+            return {
+                ...state,
+                profiles: userIdAuth,
+                loading: false
+            }
         case CLEAR_PROFILE:
             return {
                 ...state,
