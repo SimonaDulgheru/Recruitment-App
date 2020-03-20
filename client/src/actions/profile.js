@@ -7,15 +7,14 @@ import {
 	GET_PROFILES,
 	UPDATE_PROFILE,
 	CLEAR_PROFILE,
-	ACCOUNT_DELETED,
-	GET_REPOS
+	ACCOUNT_DELETED
 } from "./types";
 
 // get current users profile
 
 export const getCurrentProfile = () => async dispatch => {
 	try {
-		const res = await axios.get("/api/profile/me");
+		const res = await axios.get("/api/userProfile/me"); //changed api/profile/me to api/userProfile/me
 		dispatch({
 			type: GET_PROFILE,
 			userIdAuth: res.data
@@ -53,7 +52,6 @@ export const createProfile = (
 			history.push("/dashboard");
 			// does the same as redirect
 		}
-		history.push("/dashboard");
 	} catch (err) {
 		const errors = err.response.data.errors;
 
@@ -72,7 +70,7 @@ export const createProfile = (
 
 // Add Experience
 
-export const AddExperience = (formData, history) => async dispatch => {
+export const addExperience = (formData, history) => async dispatch => {
 	try {
 		const config = {
 			headers: {
@@ -108,7 +106,7 @@ export const AddExperience = (formData, history) => async dispatch => {
 
 // Add Education
 
-export const AddEducation = (formData, history) => async dispatch => {
+export const addEducation = (formData, history) => async dispatch => {
 	try {
 		const config = {
 			headers: {
