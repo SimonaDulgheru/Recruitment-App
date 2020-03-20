@@ -1,23 +1,30 @@
-$gradientColor: linear-gradient( -128deg, (#D79719) 3%, (#C0237C) 88%, (#A20C75) 100%);
+$gradientColor: linear-gradient(
+	-128deg,
+	(#d79719) 3%,
+	(#c0237c) 88%,
+	(#a20c75) 100%
+);
 $orange: #da621e;
 $creamWhite: #f5f1e5;
-$cyanBlue: #03b1cf;
+$cyanBlue: #0acf03;
 $black: #000000;
 @mixin backgroundDesktop {
-    background: linear-gradient( (#00000065), (#00000065)), url(../assets/running-HD.jpg) center center / cover no-repeat fixed;
-    background-color: $gradientColor;
+	background: linear-gradient((#00000065), (#00000065)),
+		url(../assets/running-HD.jpg) center center / cover no-repeat fixed;
+	background-color: $gradientColor;
 }
 
 @mixin backgroundMobile {
-    background: linear-gradient( (#00000033), (#00000033)), url(../assets/running-HD-mobile.jpg) center center / cover no-repeat fixed;
-    ;
-    background-color: $gradientColor;
+	background: linear-gradient((#00000033), (#00000033)),
+		url(../assets/running-HD-mobile.jpg) center center / cover no-repeat
+			fixed;
+	background-color: $gradientColor;
 }
 
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
 }
 
 // form.signup,
@@ -25,53 +32,53 @@ $black: #000000;
 //   margin-top: 50px;
 // }
 body {
-    @include backgroundDesktop();
-    color: $creamWhite;
+	@include backgroundDesktop();
+	color: $creamWhite;
 }
 
 .main-header {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    min-height: 8vh;
-    background: $creamWhite;
-    font-family: 'Poppins', sans-serif;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+	min-height: 8vh;
+	background: $creamWhite;
+	font-family: "Poppins", sans-serif;
 }
 
 .logo {
-    color: $orange;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    font-size: 25px;
-    width: 45%;
+	color: $orange;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	font-size: 25px;
+	width: 45%;
 }
 
 .container {
-    font-family: 'Oswald', sans-serif;
-    margin: 5% auto;
-    padding: 0 15px;
-    width: 70%;
+	font-family: "Oswald", sans-serif;
+	margin: 5% auto;
+	padding: 0 15px;
+	width: 70%;
 }
 
 .row {
-    margin: auto;
+	margin: auto;
 }
 
 h2 {
-    color: $creamWhite;
+	color: $creamWhite;
 }
 
 label {
-    color: $creamWhite;
-    font-size: 20px;
+	color: $creamWhite;
+	font-size: 20px;
 }
 
 .btn {
-    outline: none;
-    text-decoration: none;
+	outline: none;
+	text-decoration: none;
 }
 
 p {
-    font-size: 20px;
+	font-size: 20px;
 }
