@@ -1,8 +1,8 @@
 /* Global Styles */
 
 :root {
-	--primary-color: #02881f;
-	--dark-color: #343a40;
+	--primary-color: #38507c;
+	--dark-color: #38507c;
 	--light-color: #f4f4f4;
 	--danger-color: #dc3545;
 	--success-color: #28a745;
@@ -20,7 +20,7 @@ body {
 	line-height: 1.6;
 	background-color: #fff;
 	/* color: #333; */
-	background-image: url(./img/Desktop2.jpg);
+	background-image: url(./img/Desktop3.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -80,13 +80,20 @@ img {
 	display: inline-block;
 	background: var(--light-color);
 	color: #333;
-	padding: 0.4rem 1.3rem;
+	width: 1rem 2rem;
 	font-size: 1rem;
 	border: none;
 	cursor: pointer;
 	margin-right: 0.5rem;
 	transition: opacity 0.2s ease-in;
 	outline: none;
+}
+
+/* .btn-primary {
+} */
+
+.btn-light {
+	padding-top: 0.5rem;
 }
 
 .badge {
@@ -163,7 +170,12 @@ img {
 }
 
 .btn:hover {
-	opacity: 0.8;
+	color: #38507c;
+	/* opacity: 0.9; */
+}
+
+.btn-primary:hover {
+	background: #ccc;
 }
 
 .bg-light,
@@ -287,7 +299,7 @@ button {
 }
 
 .navbar a:hover {
-	color: var(--primary-color);
+	color: rgb(10, 10, 10);
 }
 
 .navbar .welcome span {
@@ -298,7 +310,7 @@ button {
 
 .desktop {
 	position: relative;
-	background: url("./img/Desktop2.jpg") no-repeat center center/cover;
+	/* background: url("./img/Desktop2.jpg") no-repeat center center/cover; */
 	height: 100vh;
 }
 
@@ -339,6 +351,27 @@ button {
 	font-weight: 700;
 }
 
+/* Dashboard */
+
+.btn-add,
+.btn-edit,
+.btn-add-ed {
+	background: #ccc;
+	padding: 1rem;
+}
+
+.btn-add:hover,
+.btn-edit:hover,
+.btn-add-ed:hover {
+	color: #000;
+}
+
+.dash-buttons {
+	display: flex;
+	justify-content: space-around;
+	margin-top: 2rem;
+}
+
 /* Profiles Page */
 
 .profile {
@@ -351,7 +384,7 @@ button {
 	margin-bottom: 1rem;
 }
 
-/* Profile Page */
+/* CReate Profile */
 
 .profile {
 	display: grid;
@@ -368,6 +401,27 @@ button {
 	text-align: center;
 }
 
+.btn-social {
+	background: #38507c;
+	color: #fff;
+	font-weight: 600;
+	padding: 0.5rem;
+	margin-bottom: 2rem;
+}
+
+.btn-social:hover {
+	color: #000;
+}
+
+.btn-back {
+	padding: 0.7rem;
+}
+
+.btn-back:hover {
+	color: #38507c;
+}
+
+/* 
 .profile-top img {
 	width: 250px;
 }
@@ -395,8 +449,8 @@ button {
 .profile-exp h2,
 .profile-edu h2 {
 	margin-bottom: 1rem;
-}
-
+} */
+/* 
 .profile-exp,
 .profile-edu {
 	margin-bottom: 1rem;
@@ -407,9 +461,9 @@ button {
 .profile-exp,
 .profile-edu {
 	border: 0;
-}
+} */
 
-.profile-exp p,
+/* .profile-exp p,
 .profile-edu p {
 	margin: 0.5rem 0;
 }
@@ -430,47 +484,21 @@ button {
 .profile-github {
 	flex: 3;
 	flex-basis: 20%;
-}
-
-/* Posts Page */
-
-.post-form .post-form-header {
-	background: var(--primary-color);
-	padding: 0.5rem;
-}
-
-.post {
-	display: grid;
-	grid-template-columns: 1fr 4fr;
-	grid-gap: 2rem;
-	align-items: center;
-}
-
-.post {
-	text-align: center;
-}
-
-.post img {
-	width: 100px;
-}
-
-.post .comment-count {
-	background: var(--light-color);
-	color: var(--primary-color);
-	padding: 0.1rem 0.2rem;
-	border-radius: 5px;
-	font-size: 0.8rem;
-}
-
-.post .post-date {
-	color: #aaa;
-	font-size: 0.8rem;
-	margin-bottom: 0.5rem;
-}
+} */
 
 /* Mobile Styles */
 
 @media (max-width: 700px) {
+	body {
+		height: 100vh;
+		font-family: "Arial";
+		font-size: 1rem;
+		line-height: 1.6;
+		background-color: #fff;
+		background-image: url(./img/Desktop3.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
 	.container {
 		margin-top: 8rem;
 	}
@@ -526,12 +554,5 @@ button {
 		display: block;
 		width: 100%;
 		margin-bottom: 0.2rem;
-	}
-	.post {
-		grid-template-columns: 1fr;
-	}
-	.post a,
-	.post button {
-		padding: 0.3rem 0.4rem;
 	}
 }

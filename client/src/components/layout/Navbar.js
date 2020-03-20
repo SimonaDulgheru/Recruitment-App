@@ -14,18 +14,15 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 				</Link>
 			</li>
 			<li>
-				<a onClick={logout} href='#!'>
+				<Link onClick={logout} to='/'>
 					Logout
-				</a>
+				</Link>
 			</li>
 		</ul>
 	);
 
 	const membersLinks = (
 		<ul>
-			{/* <li>
-				<a href='#!'>Members</a>
-			</li> */}
 			<li>
 				<Link to='/register'>Register</Link>
 			</li>

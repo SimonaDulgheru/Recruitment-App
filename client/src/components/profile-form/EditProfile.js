@@ -174,7 +174,7 @@ const EditProfile = ({
 					<button
 						onClick={() => toggleSocialInputs(!displaySocialInputs)}
 						type='button'
-						className='btn btn-light'>
+						className='btn btn-social'>
 						Your Social Network Links
 					</button>
 					<span>Optional</span>
@@ -238,8 +238,8 @@ const EditProfile = ({
 					</Fragment>
 				)}
 
-				<input type='submit' className='btn btn-primary my-1' />
-				<Link className='btn btn-light my-1' to='/dashboard'>
+				<input type='submit' className='btn btn-primary submit' />
+				<Link className='btn-back btn-light  ' to='/dashboard'>
 					Go Back
 				</Link>
 			</form>
