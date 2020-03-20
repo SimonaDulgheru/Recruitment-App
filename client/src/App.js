@@ -38,6 +38,7 @@ const App = () => {
 	}, []);
 
 	return (
+		//Provider makes the Redux store available to any nested components that have been wrapped in the connect() function.
 		<Provider store={store}>
 			<Router>
 				<Fragment>

@@ -35,7 +35,7 @@ const EditProfile = ({
 			website: loading || !profile.website ? "" : profile.website,
 			location: loading || !profile.location ? "" : profile.location,
 			status: loading || !profile.status ? "" : profile.status,
-			skills: loading || !profile.skills ? "" : profile.skills.join(","),
+			skills: loading || !profile.skills ? "" : profile.skills.join(","), // Returns skills with a comma between them
 			githubusername:
 				loading || !profile.githubusername
 					? ""

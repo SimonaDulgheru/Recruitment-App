@@ -8,8 +8,6 @@ import CreateProfile from "../profile-form/CreateProfile";
 import EditProfile from "../profile-form/EditProfile";
 import AddExperience from "../profile-form/AddExperience";
 
-// import PrivateRoute from "./PrivateRoute";
-
 const Routes = () => {
 	return (
 		<section className='container'>
@@ -17,7 +15,6 @@ const Routes = () => {
 			<Switch>
 				<Route exact path='/register' component={Register} />
 				<Route exact path='/login' component={Login} />
-
 				<Route exact path='/dashboard' component={Dashboard} />
 				<Route exact path='/create-profile' component={CreateProfile} />
 				<Route exact path='/edit-profile' component={EditProfile} />
