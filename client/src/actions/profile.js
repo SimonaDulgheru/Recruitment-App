@@ -6,10 +6,9 @@ import {
 	PROFILE_ERROR,
 	// GET_PROFILES,
 	UPDATE_PROFILE
-	// CLEAR_PROFILE
 } from "./types";
 
-// get current users profile
+// Get current users profile
 
 export const getCurrentProfile = () => async dispatch => {
 	try {
@@ -29,7 +28,7 @@ export const getCurrentProfile = () => async dispatch => {
 	}
 };
 
-// create/update profile
+// Create/update profile
 export const createProfile = (
 	formData,
 	history,

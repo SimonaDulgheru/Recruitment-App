@@ -23,7 +23,7 @@ const Login = ({ login, isAuthenticated }) => {
 		login(email, password);
 		console.log("Sucessfully logged in");
 	};
-	// if the user is authenticated, user get logged in and redirected
+	// If the user is authenticated, user get logged in and redirected
 	if (isAuthenticated) {
 		return <Redirect to='/dashboard' />;
 	}

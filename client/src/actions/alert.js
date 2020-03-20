@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from "uuid"; // debugged, uuid needs to be in curly brackets https://www.npmjs.com/package/uuid
+import { v4 as uuidv4 } from "uuid"; // Debugged, uuid needs to be in curly brackets https://www.npmjs.com/package/uuid
 import { SET_ALERT, REMOVE_ALERT } from "./types";
 
 export const setAlert = (msg, alertType, timeout = 5000) => dispatch => {
