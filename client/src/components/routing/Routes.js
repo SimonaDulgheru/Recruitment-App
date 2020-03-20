@@ -8,7 +8,7 @@ import CreateProfile from "../profile-form/CreateProfile";
 import EditProfile from "../profile-form/EditProfile";
 import AddExperience from "../profile-form/AddExperience";
 
-import PrivateRoute from "./PrivateRoute";
+// import PrivateRoute from "./PrivateRoute";
 
 const Routes = () => {
 	return (

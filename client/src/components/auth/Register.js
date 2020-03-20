@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
 import { register } from "../../actions/auth";
 import { setAlert } from "../../actions/alert";
-import Navbar from "../layout/Navbar";
+// import Navbar from "../layout/Navbar";
 import PropTypes from "prop-types";
 
 const Register = ({ setAlert, register, isAuthenticated }) => {
