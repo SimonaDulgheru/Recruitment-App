@@ -178,12 +178,6 @@ img {
 	border-radius: 50%;
 }
 
-.line {
-	height: 1px;
-	background: #ccc;
-	margin: 1.5rem 0;
-}
-
 /* Overlay */
 
 .dark-overlay {
@@ -253,16 +247,6 @@ button {
 	color: #0077b5;
 }
 
-/* .table th,
-.table td {
-	padding: 1rem;
-	text-align: left;
-}
-
-.table th {
-	background: var(--light-color);
-} */
-
 /* Navbar */
 
 .navbar {
@@ -305,7 +289,7 @@ button {
 }
 
 .desktop-inner {
-	color: #000;
+	color: #fff;
 	height: 100%;
 	width: 100%;
 	margin: auto;
@@ -327,6 +311,7 @@ button {
 
 .lead-about {
 	font-size: 1.2rem;
+	font-weight: 500;
 	margin-bottom: 2rem;
 }
 

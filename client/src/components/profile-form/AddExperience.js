@@ -117,7 +117,7 @@ const AddExperience = ({ addExperience, history }) => {
 						onChange={e => onChange(e)}></textarea>
 				</div>
 				<input type='submit' class='btn btn-primary ' />
-				<Link className='btn ' to='/dashboard'>
+				<Link className='btn-back btn-light ' to='/dashboard'>
 					Go Back
 				</Link>
 			</form>
