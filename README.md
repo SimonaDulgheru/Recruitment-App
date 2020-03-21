@@ -20,6 +20,10 @@ SoftDev is a platform from which both recruiters and developers can benefit. Onc
 -   install npm packages - npm install
 -   Start the application server using the command - npm run dev
 
+![Capture](https://user-images.githubusercontent.com/48987979/77226783-ddcf1000-6b72-11ea-8c6b-733deff599cc.JPG)
+
+![Capture2](https://user-images.githubusercontent.com/48987979/77226817-0bb45480-6b73-11ea-8c9f-d81eb8df3e24.JPG)
+
 ## Technology used -MERN
 
 -   JavaScript
