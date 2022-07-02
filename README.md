@@ -27,7 +27,7 @@ SoftDev is a platform from which both recruiters and developers can benefit. Onc
 ## Technology used -MERN
 
 -   JavaScript
--   MongoDb
+-   MongoDB
 -   Node.js
 -   Express
 -   React
@@ -35,4 +35,4 @@ SoftDev is a platform from which both recruiters and developers can benefit. Onc
 
 ## Deployed on Heroku
 
-[Live Preview ](https://afternoon-peak-27846.herokuapp.com/)
+## [Live Preview](https://afternoon-peak-27846.herokuapp.com/)
